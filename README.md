@@ -11,7 +11,7 @@
    ```
 2. Open the file [`app/page.tsx`](apps/docs/app/page.tsx) inside the folder `apps/docs/`.
 3. Set a breakpoint on the same line as the `console.log`.
-4. Start the debugger by pressing `F5` or similar.
+4. Start the debugger and open the page in a browser.
 5. Observe 
    - the debugger NOT stopping at the breakpoint
    - the debugger stopping at the debugger statement
