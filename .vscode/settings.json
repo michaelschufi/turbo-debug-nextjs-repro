@@ -1,4 +1,8 @@
 {
+  "files.exclude": {
+    "apps": true,
+    "packages": true
+  },
   "eslint.workingDirectories": [
     {
       "mode": "auto"
