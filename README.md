@@ -1,3 +1,38 @@
+# Repoduction Repo - Turborepo x Next.js x VS Code
+1. Using VS Code, open either 
+   the file [turbo-debug-nextjs-repro.code-workspace](turbo-debug-nextjs-repro.code-workspace):
+   ```
+   code turbo-debug-nextjs-repro.code-workspace
+   ```
+   
+   or the folder [docs](apps/docs/):
+   ```
+   code apps/docs
+   ```
+2. Open the file [`app/page.tsx`](apps/docs/app/page.tsx) inside the folder `apps/docs/`.
+3. Set a breakpoint on the same line as the `console.log`.
+4. Start the debugger by pressing `F5` or similar.
+5. Observe 
+   - the debugger NOT stopping at the breakpoint
+   - the debugger stopping at the debugger statement
+   - the debugger opening a second VS Code file tab
+   - the paths of the two tabs not matching when hovering over the tab labels (see screenshot below)  
+
+-> As can be seen: The debugger kind of adds the path to the workspace folder to the path of the file it is debugging - resulting in doubling the path segments.
+
+```diff
+- ~/repos/turbo-debug-nextjs-repro/apps/docs/app/page.tsx
++ ~/repos/turbo-debug-nextjs-repro/apps/docs/apps/docs/app/page.tsx
+```
+
+
+
+**Screenshot - Actual page.tsx file**
+![Screenshot of VS Code with two tabs, one of which is not matching the path of the other](screenshot-real-file.png)
+**Screenshot - The "file" the debugger is actually debugging**
+![Screenshot of VS Code with two tabs, one of which is not matching the path of the other](screenshot-debugger-file.png)
+
+-- 
 # Turborepo starter
 
 This is an official starter Turborepo.
